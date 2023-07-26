@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Rewrite Manifest Path in Index
-        run: sed -i 's@/public/manifest.json@${{ github.event.repository.name }}/public/manifest.json@g' ./public/index.html && cat index.html
+        run: sed -i 's@/public/manifest.json@${{ github.event.repository.name }}/public/manifest.json@g' ./public/index.html && cat ./public/index.html
 
       - name: Rewrite Service Worker Path in Index
         run: sed -i 's@/src/service-worker.js@${{ github.event.repository.name }}/src/service-worker.js@g' ./public/index.html && cat ./public/index.html
